@@ -173,8 +173,28 @@ sampling = {
 
 data_merged.iloc[:100].resample(rule="200ms").apply(sampling)
 
-print(data_merged.head(100))
+days = []
+
+for n, g in data_merged.groupby(pd.Grouper(freq="D")):
+    days.append(g)
+
+resampled_days = []
+data_resampled = []
+
+for df in days:
+    df_resampled = df.resample(rule='200ms').apply(sampling)
+    df_resampled = df_resampled.dropna()
+    resampled_days.append(df_resampled)
+data_resampled = pd.concat(resampled_days)
+
+data_resampled["set"] = data_resampled["set"].astype(int)
 
 # --------------------------------------------------------------
 # Export dataset
 # --------------------------------------------------------------
+
+data_resampled.to_pickle("../../data/interim/01_data_processed.pkl")
+
+df = pd.read_pickle("../../data/interim/01_data_processed.pkl")
+df.to_csv("../../data/interim/01_data_processed.csv", sep="\t")
+
