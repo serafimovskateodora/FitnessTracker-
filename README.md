@@ -154,11 +154,8 @@ python src/visualization/visualize.py        # plots             -> reports/figu
 
 ## Results and Figures
 
-[Add 1-2 screenshots from `reports/figures/`, for example the combined accelerometer and gyroscope plot for one exercise.]
-
-```markdown
-![Squat (A)](reports/figures/Squat%20(A).png)
-```
+![img.png](img.png)
+![Bench (A).png](reports/figures/Bench%20%28A%29.png)
 
 ## Key Learnings
 
