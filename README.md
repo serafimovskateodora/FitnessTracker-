@@ -2,7 +2,6 @@
 
 A data-processing pipeline for wearable sensor data (accelerometer and gyroscope) recorded while participants perform gym exercises. The goal is to turn raw, noisy, multi-rate sensor streams into a clean, unified dataset that is ready for machine learning-based exercise recognition.
 
-> **Note:** Personal learning project, built while following an online course on sensor-based exercise recognition. [Add course name / link here.]
 
 ---
 
@@ -43,8 +42,22 @@ Data was recorded with a **MetaMotion** wearable sensor, which captures:
 
 Participants performed gym exercises such as **bench press, squat and row** in **medium** and **heavy** sets. Metadata (participant, exercise, set category) is parsed from each file name.
 
-[Add: number of participants, number of exercises, and a link to the data source if it is public.]
+5 participants (A-E) performed 5 barbell exercises, plus a rest label, across 91 recorded sets:
 
+5 participants (A-E) performed 5 barbell exercises, plus a rest label, across 91 recorded sets:
+
+| Label   | Exercise          |
+|---------|-------------------|
+| `bench` | Bench press       |
+| `squat` | Squat             |
+| `dead`  | Deadlift          |
+| `ohp`   | Overhead press    |
+| `row`   | Barbell row       |
+| `rest`  | Rest between sets |
+
+Exercise sets were performed at medium and heavy intensity; rest periods are labeled sitting or standing. Metadata (participant, exercise, set category) is parsed from each file name. Data provided with the course.
+
+Exercise sets were performed at medium and heavy intensity; rest periods are labeled sitting or standing. Metadata (participant, exercise, set category) is parsed from each file name. Data provided with the course. 
 ## Pipeline
 
 ### 1. Data loading and merging
