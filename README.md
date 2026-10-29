@@ -167,7 +167,6 @@ python src/visualization/visualize.py        # plots             -> reports/figu
 
 ## Results and Figures
 
-![img.png](img.png)
 ![Bench (A).png](reports/figures/Bench%20%28A%29.png)
 
 ## Key Learnings
